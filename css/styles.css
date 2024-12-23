@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.puzzle-slot {
+  width: 150px;
+  height: 150px;
+  border: 2px dashed #aaa;
+  position: relative;
+}
+
+.puzzle-pieces {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  border: 1px solid #ddd;
+  background: url('../images/nh.png') no-repeat center/contain;
+}
+
+.puzzle-piece {
+  width: 150px;
+  height: 150px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: grab;
+  position: absolute;
+}
+
+.puzzle-piece[data-piece="1"] {
+  top: 13px;
+  left: 10px;
+  background: url('../images/hyun.jpg') no-repeat left top/312px;
+}
+
+.puzzle-piece[data-piece="2"] {
+  top: 13px;
+  left: 170px;
+  background: url('../images/hyun.jpg') no-repeat right top/300px;
+
+}
+
+.puzzle-piece[data-piece="3"] {
+  top: 170px;
+  left: 10px;
+  background: url('../images/hyun.jpg') no-repeat left bottom/300px;
+
+}
+
+.puzzle-piece[data-piece="4"] {
+  top: 170px;
+  left: 170px;
+  background: url('../images/hyun.jpg') no-repeat right bottom/300px;
+
+}
+
+@media screen and (max-width : 425px) {
+  body {
+    flex-direction: column;
+  }
+}
